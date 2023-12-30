@@ -92,7 +92,6 @@ function display(data, forcasts) {
                   
                 </div>`;
     }
-    forcastsCard.innerHTML = forcastDay;
   }
 
   // ! Top section location name and date
@@ -106,11 +105,7 @@ function display(data, forcasts) {
   humidity.innerHTML = `${data.current.humidity} %`;
 
   // ! Days forcasts cards
-  // forcastsCard.innerHTML = forcastDay;
-}
-
-function searchCity(loc) {
-  console.log(loc);
+  forcastsCard.innerHTML = forcastDay;
 }
 
 function formateDate(date) {
@@ -131,13 +126,38 @@ function dayName(dateString) {
   return new Intl.DateTimeFormat("en-US", options).format(date);
 }
 
+// ! Get the user location
 const successCallback = (position) => {
   console.log(position);
+  getData(`${position.coords.latitude},${position.coords.longitude}`, APIKey);
 };
 
 const errorCallback = (error) => {
   temp.innerHTML = error.message;
   console.log(error.message);
+  alert("Please allow access to your location for the weather app to work properly.");
 };
 
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+getIp();
+
+function getIp() {
+  let request = new XMLHttpRequest();
+
+  request.open(
+    "GET",
+    "https://api.ipdata.co/?api-key=cf77eb12f918cfc3fea13e197a62fa2ab6811aa58dcea42542114f20"
+  );
+
+  request.setRequestHeader("Accept", "application/json");
+
+  request.onreadystatechange = function () {
+    if (this.readyState === 4) {
+      const userLocation = JSON.parse(this.responseText).country_name;
+      console.log(JSON.parse(this.responseText));
+      getData(userLocation, APIKey);
+    }
+  };
+
+  request.send();
+}
