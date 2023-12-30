@@ -51,7 +51,7 @@ function getData(searchQ, APIKey) {
     })
     .catch((error) => {
       // console.log(error);
-      getData("cairo", APIKey);
+      getIp();
       search.classList.add("border-red-500");
     });
 }
