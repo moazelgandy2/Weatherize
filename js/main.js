@@ -31,7 +31,7 @@ let searchQ;
 getData("cairo", APIKey);
 
 function getData(searchQ, APIKey) {
-  fetch(`http://api.weatherapi.com/v1/forecast.json?key=${APIKey}&q=${searchQ}&days=4`)
+  fetch(`https://api.weatherapi.com/v1/forecast.json?key=${APIKey}&q=${searchQ}&days=4`)
     .then((response) => response.json())
     .then((data) => {
       display(data, data.forecast.forecastday);
@@ -48,8 +48,8 @@ function getData(searchQ, APIKey) {
       });
     })
     .catch((error) => {
-      getData("cairo", APIKey);
-      search.classList.add("border-red-500");
+      // getData("cairo", APIKey);
+      // search.classList.add("border-red-500");
     });
 }
 //! Display data function
@@ -155,7 +155,7 @@ function getIp() {
     if (this.readyState === 4) {
       const userLocation = JSON.parse(this.responseText).country_name;
       console.log(JSON.parse(this.responseText));
-      getData(userLocation, APIKey);
+      // getData(userLocation, APIKey);
     }
   };
 
