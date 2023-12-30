@@ -28,10 +28,12 @@ const doneTypingInterval = 700; //time in ms (5 seconds)
 let APIKey = "9adb2bc5e0d84689826164557232912";
 let searchQ;
 
-getData("cairo", APIKey);
+getData("Cairo", APIKey);
 
 function getData(searchQ, APIKey) {
-  fetch(`https://api.weatherapi.com/v1/forecast.json?key=${APIKey}&q=${searchQ}&days=4`)
+  const proxyUrl = "https://corsproxy.io/?";
+
+  fetch(`${proxyUrl}https://api.weatherapi.com/v1/forecast.json?key=${APIKey}&q=${searchQ}&days=4`)
     .then((response) => response.json())
     .then((data) => {
       display(data, data.forecast.forecastday);
@@ -48,8 +50,9 @@ function getData(searchQ, APIKey) {
       });
     })
     .catch((error) => {
-      // getData("cairo", APIKey);
-      // search.classList.add("border-red-500");
+      // console.log(error);
+      getData("cairo", APIKey);
+      search.classList.add("border-red-500");
     });
 }
 //! Display data function
@@ -128,18 +131,18 @@ function dayName(dateString) {
 
 // ! Get the user location
 const successCallback = (position) => {
-  console.log(position);
+  // console.log(position);
   getData(`${position.coords.latitude},${position.coords.longitude}`, APIKey);
 };
 
 const errorCallback = (error) => {
   temp.innerHTML = error.message;
   console.log(error.message);
+  getIp();
   alert("Please allow access to your location for the weather app to work properly.");
 };
 
 navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-getIp();
 
 function getIp() {
   let request = new XMLHttpRequest();
@@ -154,8 +157,7 @@ function getIp() {
   request.onreadystatechange = function () {
     if (this.readyState === 4) {
       const userLocation = JSON.parse(this.responseText).country_name;
-      console.log(JSON.parse(this.responseText));
-      // getData(userLocation, APIKey);
+      getData(userLocation, APIKey);
     }
   };
 
