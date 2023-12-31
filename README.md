@@ -1,6 +1,6 @@
 # 🌦️ Weatherize
 
-Weatherize is a sleek weather forecasting application powered by JavaScript and styled with Tailwind CSS. It leverages the WeatherAPI to fetch accurate weather data based on the user's location.
+Weatherize is a sleek and fully responsive weather forecasting application powered by JavaScript and styled with Tailwind CSS. It leverages the WeatherAPI to fetch accurate weather data based on the user's location.
 
 ## Key Features
 
@@ -13,7 +13,7 @@ Weatherize is a sleek weather forecasting application powered by JavaScript and 
 ## Gallery
 
 Explore Weatherize in action:
-![Image](https://github.com/moazelgandy2/Weatherize/assets/56883008/8114a167-ba37-40bb-a00c-ce856100cfb8)
+![Weatherize Preview](https://github.com/moazelgandy2/Weatherize/assets/56883008/8114a167-ba37-40bb-a00c-ce856100cfb8)
 
 ## Live Demo
 
