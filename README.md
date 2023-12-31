@@ -13,9 +13,7 @@ Weatherize is a sleek weather forecasting application powered by JavaScript and 
 ## Gallery
 
 Explore Weatherize in action:
-![Weatherize Preview](https://github.com/moazelgandy2/Weatherize/assets/56883008/8114a167-ba37-40bb-a00c-ce856100cfb8)
-
-![Weatherize Preview](![image](https://github.com/moazelgandy2/Weatherize/assets/56883008/3e81d82c-132c-4c53-81c8-183b4f888c81))
+![Image](https://github.com/moazelgandy2/Weatherize/assets/56883008/8114a167-ba37-40bb-a00c-ce856100cfb8)
 
 ## Live Demo
 
