@@ -44,4 +44,4 @@ Join us in making Weatherize better! Your contributions are highly valued in fos
 
 ## License
 
-Weatherize is distributed under the [MIT License](https://opensource.org/licenses/MIT). Refer to the `LICENSE` file for details.
+Weatherize is distributed under the [MIT License](https://opensource.org/licenses/MIT).
