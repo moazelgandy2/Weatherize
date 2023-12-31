@@ -25,7 +25,7 @@ let typingTimer;
 const doneTypingInterval = 700; //time in ms (5 seconds)
 
 // ! API setting
-let APIKey = "9adb2bc5e0d84689826164557232912";
+let APIKey = "YOUR-API-KEY";
 let searchQ;
 
 getData("Cairo", APIKey);
