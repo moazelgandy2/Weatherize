@@ -17,7 +17,7 @@ Explore Weatherize in action:
 
 ## Live Demo
 
-Check out the live demo of Weatherize [here](https://moazelgandy2.github.io/Weatherize/).
+Check out the live demo of Weatherize [here](https://weatherize-7cf18.web.app).
 
 ## API Integration
 
